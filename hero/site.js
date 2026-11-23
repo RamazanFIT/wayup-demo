@@ -121,11 +121,20 @@
     const utm = UTM.map(k => [k, form.elements[k].value || '—']);
     $('#crmrows').innerHTML = rows.map(([k, v]) => `<div class="r"><span>${esc(k)}</span><span>${esc(v)}</span></div>`).join('')
       + utm.map(([k, v]) => `<div class="r utm"><span>${esc(k)}</span><span>${esc(v)}</span></div>`).join('');
+    const waText = (L === 'kz' ? 'Сәлеметсіз бе! Way Up сайтынан өтінім: ' : 'Здравствуйте! Заявка с сайта Way Up: ')
+      + [answers.country, answers.program, answers.budget, form.elements.intake.selectedOptions[0].textContent].filter(Boolean).join(', ')
+      + '. ' + name.value.trim();
+    $('#qwa').href = 'https://wa.me/77071449552?text=' + encodeURIComponent(waText);
     form.style.display = 'none';
     done.classList.add('on');
     $('#qn').textContent = '✓';
     $$('#qbar span').forEach(s => s.classList.add('on'));
   });
+
+  /* плавающая кнопка WhatsApp: после первого экрана */
+  const waf = $('.wafloat');
+  const onWa = () => waf && waf.classList.toggle('show', scrollY > innerHeight * .6);
+  addEventListener('scroll', onWa, {passive: true}); onWa();
 
   /* вариант дизайна в футере */
   const cur = (location.pathname.match(/([abc])\.html$/) || [])[1];

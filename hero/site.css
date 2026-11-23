@@ -155,7 +155,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .final2 .row2{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:end;margin-top:60px}
 .final2 .row2>*{min-width:0}
 .contacts2{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;font-size:16px}
-.contacts2 span{display:block;opacity:.45;font-size:14px;margin-bottom:6px}
+.contacts2>div>span{display:block;opacity:.45;font-size:14px;margin-bottom:6px}
 .foot2{background:var(--ink);color:#fff;padding:60px var(--pad) 40px;font-size:13px}
 .foot2 .wrapx{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px 40px;opacity:.55}
 .foot2 a{text-decoration:underline;text-underline-offset:3px}
@@ -189,3 +189,25 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .lead2{font-size:17px}
   .ticker2{padding:30px 0}
 }
+
+/* контакты, WhatsApp, отзывы-примеры */
+.contacts2 .cv{display:block;font-weight:600;font-size:17px;opacity:1;margin:0}
+.contacts2 a.cv{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.contacts2 .ex{font-style:normal;font-size:12px;opacity:.45;margin-top:4px;display:block}
+.cbtns{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:14px;margin-top:10px}
+@media(min-width:901px){.final2 .row2{grid-template-columns:1.1fr 1fr}}
+.bigbtn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
+.mcontact{display:flex;gap:22px;margin-top:22px;font-size:18px;font-weight:600}
+.mcontact a{text-decoration:underline;text-underline-offset:4px}
+.mmenu .lang{margin-top:auto}
+.wafloat{position:fixed;right:22px;bottom:22px;z-index:40;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px -8px rgba(0,0,0,.45);transition:transform .3s,opacity .3s;opacity:0;pointer-events:none;transform:translateY(12px)}
+.wafloat.show{opacity:1;pointer-events:auto;transform:none}
+.wafloat:hover{transform:scale(1.06)}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.rev{position:relative;margin:0}
+.rev img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;display:block;filter:grayscale(.2)}
+.rev .tag{position:absolute;top:12px;left:12px;background:#fff;color:#0b0b0c;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px}
+.rev blockquote{font-size:21px;line-height:1.4;font-weight:600;letter-spacing:-.01em;margin:22px 0 16px}
+.rev figcaption{font-size:15px;color:var(--mute)}
+.rev figcaption b{display:block;color:var(--ink);font-weight:700;margin-bottom:2px}
+@media(max-width:900px){.revs{grid-template-columns:1fr;gap:50px}.wafloat{right:16px;bottom:16px;width:54px;height:54px}.cbtns .bigbtn{width:100%;justify-content:center}}
