@@ -2,19 +2,22 @@
 <title>Way Up — вариант B</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%230b0b0c%22/%3E%3Ctext x=%2216%22 y=%2223%22 font-size=%2218%22 font-family=%22Arial%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3EW%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Way Up Global Education — учёба за рубежом: США, Канада, Великобритания, Европа, Азия. Демо-концепт сайта.">
+<link rel="stylesheet" href="site.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Inter Tight",system-ui,sans-serif;background:#fff;color:#0b0b0c;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:"Inter Tight",system-ui,sans-serif;background:#fff;color:#0b0b0c;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-nav{display:flex;align-items:center;justify-content:space-between;padding:26px 32px}
+.site-nav{position:sticky;top:0;z-index:20;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:26px 32px}.site-nav.scrolled{background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 .logo{font-weight:800;font-size:20px;letter-spacing:-.02em}
 .links{display:flex;gap:34px;font-size:15px}
-.right{display:flex;gap:18px;align-items:center;font-size:14px}.lang span{opacity:.4}
+.right{display:flex;gap:18px;align-items:center;font-size:14px}
 .btn{background:#0b0b0c;color:#fff;padding:12px 22px;border-radius:999px;font-weight:500}
 .mega{padding:0 24px;margin-top:2vh}
 .mega div{overflow:hidden;padding-top:.2em}
 .mega span{display:block;font-weight:900;text-transform:uppercase;letter-spacing:-.055em;line-height:.9;white-space:nowrap;transform:translateY(100%);animation:up 1.2s cubic-bezier(.2,.8,.2,1) forwards}
-.m1{font-size:13.6vw}.m2{font-size:13.6vw;animation-delay:.12s!important;text-align:right}
+.mega b{font-weight:inherit}.m1{font-size:13.6vw}.m2{font-size:13.6vw;animation-delay:.12s!important;text-align:right}
 @keyframes up{to{transform:none}}
 .row{display:grid;grid-template-columns:380px 1fr;gap:40px;padding:34px 32px 40px;align-items:end}
 .row>*{min-width:0}
@@ -26,29 +29,260 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:26px 3
 .track{display:flex;gap:14px;width:max-content;animation:mq 40s linear infinite}
 .card{width:300px;flex:none}
 .card img{width:300px;height:210px;object-fit:cover;border-radius:10px;display:block;filter:saturate(.9)}
-.card p{font-size:13px;margin-top:8px;display:flex;justify-content:space-between}.card p span{opacity:.5}
+.card p{font-size:13px;margin-top:8px;display:flex;justify-content:space-between}.card p span{opacity:.5}.card p b{font-weight:inherit}
 @keyframes mq{to{transform:translateX(-50%)}}
 .credit{font-size:11px;opacity:.4;padding:0 32px 20px}
-@media(max-width:760px){.links{display:none}nav{padding:20px}.mega{padding:0 14px}.row{grid-template-columns:1fr;padding:24px 20px}.card,.card img{width:220px}.card img{height:160px}}
-</style></head><body>
-<nav><div class="logo">Way Up</div>
-  <div class="links"><a href="#">Страны</a><a href="#">Программы</a><a href="#">Как мы работаем</a><a href="#">Отзывы</a></div>
-  <div class="right"><div class="lang"><b>RU</b> <span>/ KZ</span></div><a class="btn" href="#">Консультация</a></div></nav>
-<section class="mega"><div><span class="m1">Учёба за</span></div><div><span class="m2">рубежом</span></div></section>
+@media(max-width:760px){.links{display:none}.site-nav{padding:20px}.right{gap:10px}.mega{padding:0 14px}.row{grid-template-columns:1fr;padding:24px 20px}.card,.card img{width:220px}.card img{height:160px}}
+</style></head><body data-lang="ru" id="top">
+<nav class="site-nav"><a class="logo" href="#top">Way Up</a>
+  <div class="links"><a href="#countries"><span class="ru">Страны</span><span class="kz">Елдер</span></a><a href="#programs"><span class="ru">Программы</span><span class="kz">Бағдарламалар</span></a><a href="#stages"><span class="ru">Как мы работаем</span><span class="kz">Қалай жұмыс істейміз</span></a><a href="#contacts"><span class="ru">Контакты</span><span class="kz">Байланыс</span></a></div>
+  <div class="right"><div class="lang"><button type="button" data-set-lang="ru" aria-pressed="true">RU</button><i>/</i><button type="button" data-set-lang="kz" aria-pressed="false">KZ</button></div><a class="btn nav-cta" href="#quiz" data-quiz><span class="ru">Консультация</span><span class="kz">Кеңес алу</span></a><button type="button" class="burger" aria-label="Меню"><i></i><i></i></button></div></nav>
+<section class="mega"><div><span class="m1"><b class="ru">Учёба за</b><b class="kz">Шетелде</b></span></div><div><span class="m2"><b class="ru">рубежом</b><b class="kz">оқу</b></span></div></section>
 <section class="row">
-  <div class="lead">США, Канада, Великобритания, Европа и Азия. Подберём вуз под ваш бюджет, соберём документы и проведём до визы — с личным ментором.<br><a class="cta" href="#">Подобрать вуз за 4 вопроса →</a></div>
+  <div class="lead"><span class="ru">США, Канада, Великобритания, Европа и Азия. Подберём вуз под ваш бюджет, соберём документы и проведём до визы — с личным ментором.</span><span class="kz">АҚШ, Канада, Ұлыбритания, Еуропа және Азия. Бюджетіңізге сай университет таңдап, құжаттарды жинаймыз және визаға дейін жеткіземіз — жеке ментормен.</span><br><a class="cta" href="#quiz" data-quiz><span class="ru">Подобрать вуз за 4 вопроса</span><span class="kz">4 сұрақпен университет таңдау</span> →</a></div>
   <div class="strip"><div class="track">
-    <div class="card"><img src="img/oxford.jpg" alt=""><p>Оксфорд <span>Великобритания</span></p></div>
-    <div class="card"><img src="img/harvard2.jpg" alt=""><p>Гарвард <span>США</span></p></div>
+    <div class="card"><img src="img/oxford.jpg" alt=""><p>Оксфорд <span><b class="ru">Великобритания</b><b class="kz">Ұлыбритания</b></span></p></div>
+    <div class="card"><img src="img/harvard2.jpg" alt=""><p>Гарвард <span><b class="ru">США</b><b class="kz">АҚШ</b></span></p></div>
     <div class="card"><img src="img/toronto.jpg" alt=""><p>Торонто <span>Канада</span></p></div>
-    <div class="card"><img src="img/cambridge.jpg" alt=""><p>Кембридж <span>Великобритания</span></p></div>
-    <div class="card"><img src="img/harvard.jpg" alt=""><p>Бостон <span>США</span></p></div>
-    <div class="card"><img src="img/oxford.jpg" alt=""><p>Оксфорд <span>Великобритания</span></p></div>
-    <div class="card"><img src="img/harvard2.jpg" alt=""><p>Гарвард <span>США</span></p></div>
+    <div class="card"><img src="img/cambridge.jpg" alt=""><p>Кембридж <span><b class="ru">Великобритания</b><b class="kz">Ұлыбритания</b></span></p></div>
+    <div class="card"><img src="img/harvard.jpg" alt=""><p>Бостон <span><b class="ru">США</b><b class="kz">АҚШ</b></span></p></div>
+    <div class="card"><img src="img/oxford.jpg" alt=""><p>Оксфорд <span><b class="ru">Великобритания</b><b class="kz">Ұлыбритания</b></span></p></div>
+    <div class="card"><img src="img/harvard2.jpg" alt=""><p>Гарвард <span><b class="ru">США</b><b class="kz">АҚШ</b></span></p></div>
     <div class="card"><img src="img/toronto.jpg" alt=""><p>Торонто <span>Канада</span></p></div>
-    <div class="card"><img src="img/cambridge.jpg" alt=""><p>Кембридж <span>Великобритания</span></p></div>
-    <div class="card"><img src="img/harvard.jpg" alt=""><p>Бостон <span>США</span></p></div>
+    <div class="card"><img src="img/cambridge.jpg" alt=""><p>Кембридж <span><b class="ru">Великобритания</b><b class="kz">Ұлыбритания</b></span></p></div>
+    <div class="card"><img src="img/harvard.jpg" alt=""><p>Бостон <span><b class="ru">США</b><b class="kz">АҚШ</b></span></p></div>
   </div></div>
 </section>
 <p class="credit">Фото: Wikimedia Commons, CC BY / BY-SA</p>
+<!--SECTIONS:BEGIN-->
+<!-- Общие секции для A/B/C. Правится здесь, потом: python3 build.py -->
+<!-- KZ-тексты — черновой перевод, на вычитку Мерей -->
+<div class="ticker2" aria-hidden="true"><div class="tt">
+  <div class="grp"><span class="ru">Бакалавриат</span><span class="kz">Бакалавриат</span><img src="img/oxford.jpg" alt=""><span class="ru">Магистратура</span><span class="kz">Магистратура</span><img src="img/toronto.jpg" alt=""><span>Foundation</span><img src="img/harvard2.jpg" alt=""><span class="ru">Языковые курсы</span><span class="kz">Тіл курстары</span><img src="img/cambridge.jpg" alt=""><span class="ru">Летние школы</span><span class="kz">Жазғы мектептер</span><img src="img/prague.jpg" alt=""><span class="ru">Гранты и стипендии</span><span class="kz">Гранттар мен стипендиялар</span><img src="img/tsinghua.jpg" alt=""></div>
+  <div class="grp"><span class="ru">Бакалавриат</span><span class="kz">Бакалавриат</span><img src="img/oxford.jpg" alt=""><span class="ru">Магистратура</span><span class="kz">Магистратура</span><img src="img/toronto.jpg" alt=""><span>Foundation</span><img src="img/harvard2.jpg" alt=""><span class="ru">Языковые курсы</span><span class="kz">Тіл курстары</span><img src="img/cambridge.jpg" alt=""><span class="ru">Летние школы</span><span class="kz">Жазғы мектептер</span><img src="img/prague.jpg" alt=""><span class="ru">Гранты и стипендии</span><span class="kz">Гранттар мен стипендиялар</span><img src="img/tsinghua.jpg" alt=""></div>
+</div></div>
+
+<section class="sx" id="programs">
+  <div class="wrapx">
+    <div class="head2 rv">
+      <div><div class="eyebrow"><span class="ru">Программы</span><span class="kz">Бағдарламалар</span></div>
+        <h2 class="h2"><span class="ru">С какой ступени <span class="soft">начнём?</span></span><span class="kz">Қай сатыдан <span class="soft">бастаймыз?</span></span></h2></div>
+      <p class="lead2"><span class="ru">Нажмите на программу — откроется подбор вуза, где она уже выбрана.</span><span class="kz">Бағдарламаны басыңыз — ол таңдалған университет іріктеуі ашылады.</span></p>
+    </div>
+    <div class="progs rv">
+      <button type="button" class="prog" data-quiz data-program="Foundation"><b>Foundation</b><p><span class="ru">Подготовительный год перед бакалавриатом. Выпускникам школ Казахстана его часто требуют в Великобритании.</span><span class="kz">Бакалавриат алдындағы дайындық жылы. Ұлыбританияда Қазақстан мектеп түлектерінен оны жиі талап етеді.</span></p><i>→</i></button>
+      <button type="button" class="prog" data-quiz data-program="Бакалавриат"><b>Бакалавриат</b><p><span class="ru">3–4 года. Подбор вуза, мотивационное письмо, подача заявок и поиск грантов.</span><span class="kz">3–4 жыл. Университет таңдау, мотивациялық хат, өтінім беру және грант іздеу.</span></p><i>→</i></button>
+      <button type="button" class="prog" data-quiz data-program="Магистратура"><b>Магистратура</b><p><span class="ru">1–2 года. Программы на английском языке, стипендии и подготовка к собеседованию.</span><span class="kz">1–2 жыл. Ағылшын тіліндегі бағдарламалар, стипендиялар және сұхбатқа дайындық.</span></p><i>→</i></button>
+      <button type="button" class="prog" data-quiz data-program="Языковые курсы"><b><span class="ru">Языковые курсы</span><span class="kz">Тіл курстары</span></b><p><span class="ru">Английский или язык страны. Подготовка к IELTS и TOEFL перед поступлением.</span><span class="kz">Ағылшын немесе сол елдің тілі. Түсер алдында IELTS пен TOEFL-ге дайындық.</span></p><i>→</i></button>
+    </div>
+  </div>
+</section>
+
+<section class="sx" id="countries" style="padding-top:40px">
+  <div class="wrapx">
+    <div class="head2 rv">
+      <div><div class="eyebrow"><span class="ru">Страны</span><span class="kz">Елдер</span></div>
+        <h2 class="h2"><span class="ru">Куда можно <span class="soft">поехать</span></span><span class="kz">Қайда <span class="soft">баруға болады</span></span></h2></div>
+      <p class="lead2"><span class="ru">Коротко о каждом направлении. Что подходит именно вам, разберём на консультации.</span><span class="kz">Әр бағыт туралы қысқаша. Сізге не сай келетінін кеңесте талдаймыз.</span></p>
+    </div>
+    <div class="tabs2 rv" role="tablist">
+      <button type="button" class="tab2" role="tab" aria-selected="true" data-tab="us"><span class="ru">США</span><span class="kz">АҚШ</span></button>
+      <button type="button" class="tab2" role="tab" aria-selected="false" data-tab="ca">Канада</button>
+      <button type="button" class="tab2" role="tab" aria-selected="false" data-tab="gb"><span class="ru">Великобритания</span><span class="kz">Ұлыбритания</span></button>
+      <button type="button" class="tab2" role="tab" aria-selected="false" data-tab="eu"><span class="ru">Европа</span><span class="kz">Еуропа</span></button>
+      <button type="button" class="tab2" role="tab" aria-selected="false" data-tab="as">Азия</button>
+    </div>
+    <div class="rv">
+      <div class="pan on" data-pan="us">
+        <figure><img src="img/harvard2.jpg" alt="Гарвардский университет"></figure>
+        <div><h3><span class="ru">США</span><span class="kz">АҚШ</span></h3>
+          <ul><li><span class="ru">Бакалавриат 4 года, магистратура 1–2 года. Можно начать с community college и перевестись в университет по схеме 2+2.</span><span class="kz">Бакалавриат 4 жыл, магистратура 1–2 жыл. Community college-дан бастап, 2+2 схемасы бойынша университетке ауысуға болады.</span></li>
+          <li><span class="ru">Английский: TOEFL, IELTS или Duolingo. SAT требуют не все вузы.</span><span class="kz">Ағылшын тілі: TOEFL, IELTS немесе Duolingo. SAT-ты барлық университет талап етпейді.</span></li>
+          <li><span class="ru">Набор осенью, в части вузов также весной.</span><span class="kz">Қабылдау күзде, кейбір университеттерде көктемде де.</span></li></ul>
+          <div class="meta"><div><span class="ru">Программы</span><span class="kz">Бағдарламалар</span><b>Bachelor · Master</b></div><div><span class="ru">Виза</span><span class="kz">Виза</span><b>F-1</b></div></div>
+          <button type="button" class="bigbtn" data-quiz data-country="США"><span class="ru">Подобрать вуз в США</span><span class="kz">АҚШ-тан университет таңдау</span> <i>→</i></button></div>
+      </div>
+      <div class="pan" data-pan="ca">
+        <figure><img src="img/toronto.jpg" alt="Университет Торонто"></figure>
+        <div><h3>Канада</h3>
+          <ul><li><span class="ru">Университеты и колледжи, программы с оплачиваемой практикой (co-op).</span><span class="kz">Университеттер мен колледждер, ақылы тәжірибесі бар бағдарламалар (co-op).</span></li>
+          <li><span class="ru">После выпуска можно получить разрешение на работу (PGWP), если программа подходит под условия.</span><span class="kz">Бағдарлама талаптарға сай болса, бітіргеннен кейін жұмысқа рұқсат (PGWP) алуға болады.</span></li>
+          <li><span class="ru">Набор в сентябре и январе, на части программ также в мае.</span><span class="kz">Қабылдау қыркүйек пен қаңтарда, кейбір бағдарламаларда мамырда да.</span></li></ul>
+          <div class="meta"><div><span class="ru">Программы</span><span class="kz">Бағдарламалар</span><b>College · University</b></div><div><span class="ru">Документ</span><span class="kz">Құжат</span><b>Study permit</b></div></div>
+          <button type="button" class="bigbtn" data-quiz data-country="Канада"><span class="ru">Подобрать вуз в Канаде</span><span class="kz">Канададан университет таңдау</span> <i>→</i></button></div>
+      </div>
+      <div class="pan" data-pan="gb">
+        <figure><img src="img/oxford.jpg" alt="Оксфорд"></figure>
+        <div><h3><span class="ru">Великобритания</span><span class="kz">Ұлыбритания</span></h3>
+          <ul><li><span class="ru">Бакалавриат 3 года, магистратура 1 год.</span><span class="kz">Бакалавриат 3 жыл, магистратура 1 жыл.</span></li>
+          <li><span class="ru">На бакалавриат подают через UCAS. Выпускникам школ Казахстана часто нужен Foundation.</span><span class="kz">Бакалавриатқа өтінім UCAS арқылы беріледі. Қазақстан мектеп түлектеріне көбіне Foundation қажет.</span></li>
+          <li><span class="ru">После выпуска есть виза Graduate Route, чтобы остаться и работать.</span><span class="kz">Бітіргеннен кейін қалып жұмыс істеуге арналған Graduate Route визасы бар.</span></li></ul>
+          <div class="meta"><div><span class="ru">Программы</span><span class="kz">Бағдарламалар</span><b>Foundation · BA · MSc</b></div><div><span class="ru">Виза</span><span class="kz">Виза</span><b>Student visa</b></div></div>
+          <button type="button" class="bigbtn" data-quiz data-country="Великобритания"><span class="ru">Подобрать вуз в Британии</span><span class="kz">Ұлыбританиядан университет таңдау</span> <i>→</i></button></div>
+      </div>
+      <div class="pan" data-pan="eu">
+        <figure><img src="img/prague.jpg" alt="Карлов университет, Прага"></figure>
+        <div><h3><span class="ru">Европа</span><span class="kz">Еуропа</span></h3>
+          <ul><li><span class="ru">Германия, Чехия, Италия, Нидерланды и другие страны.</span><span class="kz">Германия, Чехия, Италия, Нидерланды және басқа елдер.</span></li>
+          <li><span class="ru">В государственных вузах ряда стран обучение бесплатное или недорогое.</span><span class="kz">Бірқатар елдердің мемлекеттік университеттерінде оқу тегін немесе арзан.</span></li>
+          <li><span class="ru">Много программ на английском, но где-то нужен язык страны.</span><span class="kz">Ағылшын тіліндегі бағдарламалар көп, бірақ кей жерде сол елдің тілі қажет.</span></li></ul>
+          <div class="meta"><div><span class="ru">Программы</span><span class="kz">Бағдарламалар</span><b>Bachelor · Master</b></div><div><span class="ru">Виза</span><span class="kz">Виза</span><b>National D</b></div></div>
+          <button type="button" class="bigbtn" data-quiz data-country="Европа"><span class="ru">Подобрать вуз в Европе</span><span class="kz">Еуропадан университет таңдау</span> <i>→</i></button></div>
+      </div>
+      <div class="pan" data-pan="as">
+        <figure><img src="img/tsinghua.jpg" alt="Университет Цинхуа"></figure>
+        <div><h3>Азия</h3>
+          <ul><li><span class="ru">Южная Корея, Китай, Малайзия, Япония.</span><span class="kz">Оңтүстік Корея, Қытай, Малайзия, Жапония.</span></li>
+          <li><span class="ru">Государственные стипендии: GKS в Корее, CSC в Китае.</span><span class="kz">Мемлекеттік стипендиялар: Кореяда GKS, Қытайда CSC.</span></li>
+          <li><span class="ru">В Малайзии работают кампусы британских и австралийских университетов.</span><span class="kz">Малайзияда британ және австралия университеттерінің кампустары жұмыс істейді.</span></li></ul>
+          <div class="meta"><div><span class="ru">Гранты</span><span class="kz">Гранттар</span><b>GKS · CSC</b></div><div><span class="ru">Программы</span><span class="kz">Бағдарламалар</span><b>Bachelor · Master</b></div></div>
+          <button type="button" class="bigbtn" data-quiz data-country="Азия"><span class="ru">Подобрать вуз в Азии</span><span class="kz">Азиядан университет таңдау</span> <i>→</i></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sx dark" id="quiz">
+  <div class="wrapx quiz2">
+    <div class="rv">
+      <div class="eyebrow"><span class="ru">Подбор вуза</span><span class="kz">Университет іріктеу</span></div>
+      <h2 class="h2" style="font-size:clamp(38px,4.6vw,72px)"><span class="ru">4 вопроса — и ментор пришлёт подборку</span><span class="kz">4 сұрақ — ментор іріктеме жібереді</span></h2>
+      <div class="qcount"><span id="qn">01</span><small> / 04</small></div>
+      <div class="qbar" id="qbar"><span class="on"></span><span></span><span></span><span></span></div>
+      <p class="qnote"><span class="ru">Займёт меньше минуты. Ментор напишет один раз в WhatsApp, без спама.</span><span class="kz">Бір минуттан аз уақыт алады. Ментор WhatsApp-қа бір рет жазады, спамсыз.</span></p>
+    </div>
+    <div class="rv">
+      <form id="qform" novalidate>
+        <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term">
+        <div class="qs on" data-step="1" data-name="country">
+          <h3><span class="ru">В какой стране хотите учиться?</span><span class="kz">Қай елде оқығыңыз келеді?</span></h3>
+          <div class="opts2">
+            <button type="button" class="opt2" data-v="США"><em>01</em><span class="ru">США</span><span class="kz">АҚШ</span></button>
+            <button type="button" class="opt2" data-v="Канада"><em>02</em>Канада</button>
+            <button type="button" class="opt2" data-v="Великобритания"><em>03</em><span class="ru">Великобритания</span><span class="kz">Ұлыбритания</span></button>
+            <button type="button" class="opt2" data-v="Европа"><em>04</em><span class="ru">Европа</span><span class="kz">Еуропа</span></button>
+            <button type="button" class="opt2" data-v="Азия"><em>05</em>Азия</button>
+            <button type="button" class="opt2" data-v="Пока не знаю"><em>06</em><span class="ru">Пока не знаю</span><span class="kz">Әзірге білмеймін</span></button>
+          </div>
+        </div>
+        <div class="qs" data-step="2" data-name="program">
+          <h3><span class="ru">Какая программа нужна?</span><span class="kz">Қандай бағдарлама керек?</span></h3>
+          <div class="opts2">
+            <button type="button" class="opt2" data-v="Foundation"><em>01</em><span class="ru">Foundation, подготовительный год</span><span class="kz">Foundation, дайындық жылы</span></button>
+            <button type="button" class="opt2" data-v="Бакалавриат"><em>02</em>Бакалавриат</button>
+            <button type="button" class="opt2" data-v="Магистратура"><em>03</em>Магистратура</button>
+            <button type="button" class="opt2" data-v="Языковые курсы"><em>04</em><span class="ru">Языковые курсы</span><span class="kz">Тіл курстары</span></button>
+          </div>
+        </div>
+        <div class="qs" data-step="3" data-name="budget">
+          <h3><span class="ru">Бюджет на год обучения?</span><span class="kz">Бір жылдық оқу бюджеті қанша?</span></h3>
+          <div class="opts2">
+            <button type="button" class="opt2" data-v="до $10 000"><em>01</em><span class="ru">До $10 000</span><span class="kz">$10 000-ға дейін</span></button>
+            <button type="button" class="opt2" data-v="$10–25 тыс."><em>02</em><span class="ru">$10–25 тыс.</span><span class="kz">$10–25 мың</span></button>
+            <button type="button" class="opt2" data-v="$25–50 тыс."><em>03</em><span class="ru">$25–50 тыс.</span><span class="kz">$25–50 мың</span></button>
+            <button type="button" class="opt2" data-v="больше $50 тыс."><em>04</em><span class="ru">Больше $50 тыс.</span><span class="kz">$50 мыңнан көп</span></button>
+            <button type="button" class="opt2" data-v="нужен грант"><em>05</em><span class="ru">Нужен грант</span><span class="kz">Грант керек</span></button>
+          </div>
+        </div>
+        <div class="qs" data-step="4">
+          <h3><span class="ru">Куда прислать подборку?</span><span class="kz">Іріктемені қайда жіберейік?</span></h3>
+          <div class="two2">
+            <div class="fld" id="fld-name"><label for="q-name"><span class="ru">Имя</span><span class="kz">Атыңыз</span></label><input id="q-name" name="name" autocomplete="given-name" data-ph-ru="Как к вам обращаться" data-ph-kz="Сізге қалай жүгінейік" placeholder="Как к вам обращаться"><div class="err"><span class="ru">Напишите имя</span><span class="kz">Атыңызды жазыңыз</span></div></div>
+            <div class="fld" id="fld-phone"><label for="q-phone">WhatsApp</label><input id="q-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 7__ ___ __ __"><div class="err"><span class="ru">Номер целиком: +7 7XX XXX XX XX</span><span class="kz">Нөмірді толық жазыңыз: +7 7XX XXX XX XX</span></div></div>
+          </div>
+          <div class="fld"><label for="q-when"><span class="ru">Когда планируете поступать?</span><span class="kz">Қашан түсуді жоспарлайсыз?</span></label>
+            <select id="q-when" name="intake"><option value="2027">2027</option><option value="2028">2028</option><option value="позже" data-ru="Позже" data-kz="Кейінірек">Позже</option></select></div>
+          <button type="submit" class="bigbtn inv" style="margin-top:10px"><span class="ru">Получить подборку вузов</span><span class="kz">Іріктемені алу</span> <i>→</i></button>
+          <p class="consent"><span class="ru">Нажимая кнопку, вы соглашаетесь на обработку данных.</span><span class="kz">Батырманы басу арқылы деректерді өңдеуге келісесіз.</span></p>
+        </div>
+        <div class="qrow"><button type="button" class="qback" id="qback" hidden>← <span class="ru">Назад</span><span class="kz">Артқа</span></button><span class="qhint" id="qhint"><span class="ru">Выберите вариант</span><span class="kz">Нұсқаны таңдаңыз</span></span></div>
+      </form>
+      <div class="done2" id="qdone">
+        <h3><span class="ru">Спасибо! Заявка у ментора.</span><span class="kz">Рахмет! Өтініміңіз менторда.</span></h3>
+        <p><span class="ru">Напишем в WhatsApp и пришлём подборку вузов. А ниже видно, как эта заявка попадёт в amoCRM.</span><span class="kz">WhatsApp арқылы жазып, университеттер іріктемесін жібереміз. Төменде бұл өтінім amoCRM-ге қалай түсетіні көрсетілген.</span></p>
+        <div class="crm2"><div class="ch"><span class="ru">Сделка в amoCRM · демо</span><span class="kz">amoCRM-дегі мәміле · демо</span></div><div id="crmrows"></div></div>
+        <button type="button" class="again" id="qagain">↺ <span class="ru">Пройти заново</span><span class="kz">Қайта өту</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sx" id="stages">
+  <div class="wrapx">
+    <div class="head2 rv">
+      <div><div class="eyebrow"><span class="ru">Как мы работаем</span><span class="kz">Қалай жұмыс істейміз</span></div>
+        <h2 class="h2"><span class="ru">Пять шагов <span class="soft">до зачисления</span></span><span class="kz">Қабылдануға дейін <span class="soft">бес қадам</span></span></h2></div>
+    </div>
+    <div class="steps2 rv">
+      <div class="st2"><div class="n">01</div><h4><span class="ru">Консультация</span><span class="kz">Кеңес</span></h4><p><span class="ru">Разбираем цели, оценки, бюджет и сроки.</span><span class="kz">Мақсатты, бағаларды, бюджет пен мерзімді талдаймыз.</span></p></div>
+      <div class="st2"><div class="n">02</div><h4><span class="ru">Подбор вузов</span><span class="kz">Университет таңдау</span></h4><p><span class="ru">Список университетов и программ под ваш профиль.</span><span class="kz">Профиліңізге сай университеттер мен бағдарламалар тізімі.</span></p></div>
+      <div class="st2"><div class="n">03</div><h4><span class="ru">Документы</span><span class="kz">Құжаттар</span></h4><p><span class="ru">Мотивационное письмо, рекомендации, подготовка к IELTS.</span><span class="kz">Мотивациялық хат, ұсынымдар, IELTS-ке дайындық.</span></p></div>
+      <div class="st2"><div class="n">04</div><h4><span class="ru">Подача</span><span class="kz">Өтінім</span></h4><p><span class="ru">Заявки в вузы и на стипендии, ждём офферы.</span><span class="kz">Университеттерге және стипендияға өтінім, офферлерді күтеміз.</span></p></div>
+      <div class="st2"><div class="n">05</div><h4><span class="ru">Виза и переезд</span><span class="kz">Виза және көшу</span></h4><p><span class="ru">Пакет на визу, жильё, билеты.</span><span class="kz">Визаға құжаттар, тұрғын үй, билеттер.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="mentor2" id="mentor">
+  <div class="bg" style="background-image:url(img/cambridge.jpg)"></div>
+  <div class="wrapx">
+    <div class="rv"><div class="eyebrow" style="opacity:.7"><span class="ru">Личный ментор</span><span class="kz">Жеке ментор</span></div>
+      <h2 class="h2"><span class="ru">Один человек ведёт вас до зачисления</span><span class="kz">Сізді бір адам қабылданғанға дейін жүргізеді</span></h2></div>
+    <div class="rv">
+      <ul><li><span class="ru">Помогает выбрать страну, вуз и программу</span><span class="kz">Ел, университет және бағдарлама таңдауға көмектеседі</span></li>
+        <li><span class="ru">Вычитывает мотивационное письмо и документы</span><span class="kz">Мотивациялық хат пен құжаттарды тексереді</span></li>
+        <li><span class="ru">Следит за дедлайнами подачи</span><span class="kz">Өтінім мерзімдерін қадағалайды</span></li>
+        <li><span class="ru">Готовит к визе и переезду</span><span class="kz">Виза мен көшуге дайындайды</span></li></ul>
+      <button type="button" class="bigbtn inv" data-quiz><span class="ru">Записаться на консультацию</span><span class="kz">Кеңеске жазылу</span> <i>→</i></button>
+    </div>
+  </div>
+</section>
+
+<section class="sx reviews2" id="reviews">
+  <div class="wrapx head2 rv" style="margin-bottom:0">
+    <div><div class="eyebrow"><span class="ru">Истории студентов</span><span class="kz">Студенттер тарихы</span></div>
+      <h2 class="h2"><span class="ru">Здесь будут отзывы <span class="soft">ваших студентов</span></span><span class="kz">Мұнда студенттеріңіздің <span class="soft">пікірлері болады</span></span></h2></div>
+    <p class="lead2"><span class="ru">Фото, вуз, страна и пара фраз от каждого. Соберём из ваших материалов, без выдуманных историй.</span><span class="kz">Әр студенттің фотосы, университеті, елі және бірер сөзі. Ойдан шығарылған тарихсыз, өз материалдарыңыздан жинаймыз.</span></p>
+  </div>
+</section>
+
+<section class="sx dark final2" id="contacts">
+  <div class="wrapx">
+    <h2 class="h2 rv"><span class="ru">Не знаете, с какой страны <span class="soft">начать?</span></span><span class="kz">Қай елден бастарыңызды <span class="soft">білмейсіз бе?</span></span></h2>
+    <div class="row2 rv">
+      <div><p class="lead2" style="margin-bottom:34px"><span class="ru">Ответьте на 4 вопроса — ментор пришлёт подборку вузов под ваш бюджет.</span><span class="kz">4 сұраққа жауап беріңіз — ментор бюджетіңізге сай университеттер іріктемесін жібереді.</span></p>
+        <button type="button" class="bigbtn inv" data-quiz><span class="ru">Подобрать вуз за 4 вопроса</span><span class="kz">4 сұрақпен университет таңдау</span> <i>→</i></button></div>
+      <div class="contacts2">
+        <div><span class="ru">Офис</span><span class="kz">Кеңсе</span><span class="ru" style="opacity:1;font-size:16px;margin:0">Алматы</span><span class="kz" style="opacity:1;font-size:16px;margin:0">Алматы</span></div>
+        <div><span>WhatsApp</span><span class="ru" style="opacity:1;font-size:16px;margin:0">Подключим ваш номер</span><span class="kz" style="opacity:1;font-size:16px;margin:0">Нөміріңізді қосамыз</span></div>
+        <div><span>Instagram</span><span class="ru" style="opacity:1;font-size:16px;margin:0">Подключим ваш аккаунт</span><span class="kz" style="opacity:1;font-size:16px;margin:0">Аккаунтыңызды қосамыз</span></div>
+        <div><span class="ru">Заявки</span><span class="kz">Өтінімдер</span><span style="opacity:1;font-size:16px;margin:0">amoCRM + UTM</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot2">
+  <div class="wrapx">
+    <span>© Way Up Global Education · <span class="ru">Алматы</span><span class="kz">Алматы</span></span>
+    <span><span class="ru">Демо-концепт, тексты черновые. KZ-версия — черновой перевод.</span><span class="kz">Демо-концепт, мәтіндер — жоба. KZ нұсқасы — алдын ала аударма.</span></span>
+    <span class="vars"><span class="ru">Варианты дизайна:</span><span class="kz">Дизайн нұсқалары:</span><a href="a.html" data-var="a">A</a><a href="b.html" data-var="b">B</a><a href="c.html" data-var="c">C</a></span>
+    <span style="flex-basis:100%"><span class="ru">Фото:</span><span class="kz">Фото:</span> Wikimedia Commons, CC BY / CC BY-SA — <a href="https://commons.wikimedia.org/wiki/Category:University_of_Oxford" target="_blank" rel="noopener">Oxford</a>, <a href="https://commons.wikimedia.org/wiki/Category:University_of_Cambridge" target="_blank" rel="noopener">Cambridge</a>, <a href="https://commons.wikimedia.org/wiki/Category:Harvard_University" target="_blank" rel="noopener">Harvard</a>, <a href="https://commons.wikimedia.org/wiki/Category:University_of_Toronto" target="_blank" rel="noopener">Toronto</a>, <a href="https://commons.wikimedia.org/wiki/File:Charles_University,_Prague.jpg" target="_blank" rel="noopener">Charles University (Slyronit, CC BY-SA 4.0)</a>, <a href="https://commons.wikimedia.org/wiki/File:TsinghuaUniversityGate.JPG" target="_blank" rel="noopener">Tsinghua (Wwbread, CC BY-SA 3.0)</a></span>
+  </div>
+</footer>
+
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <div class="mmenu-top"><b>Way Up</b><button type="button" class="mmenu-close" id="mclose" aria-label="Закрыть">×</button></div>
+  <nav>
+    <a href="#countries"><span class="ru">Страны</span><span class="kz">Елдер</span></a>
+    <a href="#programs"><span class="ru">Программы</span><span class="kz">Бағдарламалар</span></a>
+    <a href="#stages"><span class="ru">Как мы работаем</span><span class="kz">Қалай жұмыс істейміз</span></a>
+    <a href="#mentor"><span class="ru">Ментор</span><span class="kz">Ментор</span></a>
+    <a href="#contacts"><span class="ru">Контакты</span><span class="kz">Байланыс</span></a>
+  </nav>
+  <div class="lang"><button type="button" data-set-lang="ru" aria-pressed="true">RU</button><i>/</i><button type="button" data-set-lang="kz" aria-pressed="false">KZ</button></div>
+  <a class="bigbtn inv" href="#quiz" data-quiz><span class="ru">Подобрать вуз за 4 вопроса</span><span class="kz">4 сұрақпен университет таңдау</span> <i>→</i></a>
+</div>
+<!--SECTIONS:END-->
+<script src="site.js"></script>
 </body></html>
